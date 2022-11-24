@@ -87,8 +87,8 @@ class PicturesFile with ChangeNotifier {
     Picture(
       name: 'Roza Taddesse',
       id: 'Aman4',
-      imageGrad: 'Assets/Jerry_Norm.jpg',
-      image: 'Assets/Jerry_Norm.jpg',
+      imageGrad: 'Assets/Images/images (1).jpg',
+      image: 'Assets/Images/images (1).jpg',
       department: 'Chemical',
       lastWord: 'እኔ ማውቀው ማወቄን ነው!!',
     ),
