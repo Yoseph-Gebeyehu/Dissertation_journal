@@ -18,13 +18,14 @@ class SoftDep extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text(
+              Text(
                 'Software Enginnering',
                 style: TextStyle(
                   fontSize: 16.0,
-                  fontFamily: 'QuckSand',
+                  fontFamily: 'QuickSand',
                   fontWeight: FontWeight.bold,
                   letterSpacing: 1.0,
+                  color: Theme.of(context).textTheme.bodyText1?.color!,
                 ),
               ),
               GestureDetector(
@@ -126,15 +127,15 @@ class SoftDep extends StatelessWidget {
                                 )
                               ]),
                           child: GestureDetector(
-                              onTap: () {
-                                Navigator.of(context).pushNamed(
-                                  PicturesDetail.routeName,
-                                  arguments: student.id,
-                                  // arguments: c.id,
-                                );
-                              },
+                            onTap: () {
+                              Navigator.of(context).pushNamed(
+                                PicturesDetail.routeName,
+                                arguments: student.id,
+                                // arguments: c.id,
+                              );
+                            },
                             child: ClipRRect(
-                            borderRadius: BorderRadius.circular(20.0),
+                              borderRadius: BorderRadius.circular(20.0),
                               child: Image(
                                 height: 190.0,
                                 width: 200.0,

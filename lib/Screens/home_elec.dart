@@ -23,14 +23,15 @@ class _ElecDepState extends State<ElecDep> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text(
+               Text(
                 'Electrical Enginnering',
                 style: TextStyle(
                   fontSize: 16.0,
-                  fontFamily: 'QuckSand',
+                  fontFamily: 'QuickSand',
                   fontWeight: FontWeight.bold,
                   letterSpacing: 1.0,
-                  color: Color.fromARGB(255, 0, 15, 153),
+                  color: Theme.of(context).textTheme.bodyText1?.color!,
+                  
                 ),
               ),
               GestureDetector(

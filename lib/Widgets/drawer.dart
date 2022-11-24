@@ -32,7 +32,7 @@ class GalleryDrawer extends StatelessWidget {
               style: TextStyle(
                 fontFamily: 'QuickSand',
                 fontSize: 18,
-                color: Theme.of(context).primaryColor,
+                color: Theme.of(context).textTheme.bodyText1?.color!,
               ),
             ),
             onTap: () =>
@@ -48,7 +48,7 @@ class GalleryDrawer extends StatelessWidget {
               style: TextStyle(
                 fontFamily: 'QuickSand',
                 fontSize: 18,
-                color: Theme.of(context).primaryColor,
+                color: Theme.of(context).textTheme.bodyText1?.color!,
               ),
             ),
             onTap: () => {
@@ -66,7 +66,7 @@ class GalleryDrawer extends StatelessWidget {
               style: TextStyle(
                 fontFamily: 'QuickSand',
                 fontSize: 18,
-                color: Theme.of(context).primaryColor,
+                color: Theme.of(context).textTheme.bodyText1?.color!,
               ),
             ),
             onTap: () => {
@@ -88,11 +88,11 @@ class GalleryDrawer extends StatelessWidget {
               style: TextStyle(
                 fontFamily: 'QuickSand',
                 fontSize: 18,
-                color: Theme.of(context).primaryColor,
+                color: Theme.of(context).textTheme.bodyText1?.color!,
               ),
             ),
           ),
-           ListTile(
+          ListTile(
             leading: Icon(
               Icons.share,
               color: Theme.of(context).iconTheme.color,
@@ -102,7 +102,7 @@ class GalleryDrawer extends StatelessWidget {
               style: TextStyle(
                 fontFamily: 'QuickSand',
                 fontSize: 18,
-                color: Theme.of(context).primaryColor,
+                color: Theme.of(context).textTheme.bodyText1?.color!,
               ),
             ),
           ),

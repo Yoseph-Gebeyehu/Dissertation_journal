@@ -55,7 +55,7 @@ class NewSearch extends SearchDelegate<String> {
                 text: queryText,
                 style: TextStyle(
                   fontSize: 17,
-                  color: Theme.of(context).accentColor,
+                  color: Theme.of(context).colorScheme.secondary,
                 ),
                 children: [
                   TextSpan(
@@ -99,7 +99,7 @@ class NewSearch extends SearchDelegate<String> {
               text: queryText,
               style: TextStyle(
                   fontSize: 17,
-                  color: Theme.of(context).accentColor,
+                  color: Theme.of(context).colorScheme.secondary,
                   fontFamily: 'QuickSand'),
               children: [
                 TextSpan(

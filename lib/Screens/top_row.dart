@@ -55,24 +55,27 @@ class _TopRowState extends State<TopRow> {
                 SliverAppBar(
                   floating: true,
                   snap: true,
+                  pinned: true,
                   shadowColor: const Color.fromARGB(255, 0, 15, 153),
                   flexibleSpace: ClipRRect(
                     child: BackdropFilter(
                       filter: ImageFilter.blur(sigmaX: 16, sigmaY: 16),
                       child: Container(
-                        decoration: const BoxDecoration(
-                          borderRadius: BorderRadius.only(
+                        decoration: BoxDecoration(
+                          borderRadius: const BorderRadius.only(
                             bottomLeft: Radius.circular(50),
                             bottomRight: Radius.circular(20),
                           ),
-                          gradient: LinearGradient(
-                            colors: [
-                              Color.fromARGB(255, 0, 64, 241),
-                              Color.fromARGB(255, 0, 15, 153),
-                            ],
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                          ),
+                          color: Theme.of(context).appBarTheme.backgroundColor,
+                          // gradient: LinearGradient(
+                          //   colors: [
+                          //     // Color.fromARGB(255, 0, 64, 241),
+                          //     // Color.fromARGB(255, 0, 15, 153),
+                          //     Theme.of(context).appBarTheme.backgroundColor,
+                          //   ],
+                          //   begin: Alignment.topLeft,
+                          //   end: Alignment.bottomRight,
+                          // ),
                         ),
                       ),
                     ),
@@ -97,7 +100,7 @@ class _TopRowState extends State<TopRow> {
                       color: Colors.white,
                     ),
                     labelColor: Colors.yellow,
-                    unselectedLabelColor: Colors.white,
+                    unselectedLabelColor: Colors.grey,
                     tabs: [
                       Tab(text: 'All'),
                       Tab(text: 'Electrical'),
@@ -112,6 +115,7 @@ class _TopRowState extends State<TopRow> {
                     'AASTU',
                     style: TextStyle(
                       fontSize: 20,
+                      color: Colors.white,
                     ),
                   ),
                   actions: [
@@ -122,7 +126,10 @@ class _TopRowState extends State<TopRow> {
                           delegate: NewSearch(pic),
                         );
                       },
-                      icon: const Icon(Icons.search),
+                      icon: const Icon(
+                        Icons.search,
+                        color: Colors.white,
+                      ),
                     ),
                     Consumer<ThemeSetting>(
                       builder: (context, value, child) {
@@ -134,6 +141,7 @@ class _TopRowState extends State<TopRow> {
                             value.darkTheme
                                 ? Icons.light_mode
                                 : Icons.dark_mode,
+                            color: Colors.white,
                           ),
                         );
                       },
