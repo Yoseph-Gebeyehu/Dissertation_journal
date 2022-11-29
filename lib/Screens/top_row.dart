@@ -1,18 +1,18 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
 import 'package:gallery/Screens/home_chem.dart';
 import 'package:gallery/Screens/home_elec.dart';
 import 'package:gallery/Screens/home_soft.dart';
-import 'package:provider/provider.dart';
-
 import 'package:gallery/Provider/pictures.dart';
 import 'package:gallery/Provider/theme_data.dart';
 import 'package:gallery/Screens/favorite_screen.dart';
 import 'package:gallery/Screens/search.dart';
-import 'package:gallery/Widgets/chem_only_grid.dart';
-import 'package:gallery/Widgets/elec_only_grid.dart';
-import 'package:gallery/Widgets/soft_only_grid.dart';
+import 'package:gallery/Widgets/d1_chem_only_grid.dart';
+import 'package:gallery/Widgets/d2_elec_only_grid.dart';
+import 'package:gallery/Widgets/d3_soft_only_grid.dart';
 import '../Provider/picture_file.dart';
 import '/Widgets/drawer.dart';
 
@@ -25,18 +25,23 @@ class TopRow extends StatefulWidget {
 }
 
 class _TopRowState extends State<TopRow> {
+
   int currentIndex = 0;
   var isFav = false;
+
   List icon = [
     Icons.home_rounded,
     Icons.favorite_rounded,
     Icons.person_rounded,
   ];
+
   List pages = [
     TopRow(),
     FavoriteScreen(),
     TopRow(),
   ];
+
+
   @override
   Widget build(BuildContext context) {
     final pic = Provider.of<PicturesFile>(context);
@@ -67,15 +72,15 @@ class _TopRowState extends State<TopRow> {
                             bottomRight: Radius.circular(20),
                           ),
                           color: Theme.of(context).appBarTheme.backgroundColor,
-                          // gradient: LinearGradient(
-                          //   colors: [
-                          //     // Color.fromARGB(255, 0, 64, 241),
-                          //     // Color.fromARGB(255, 0, 15, 153),
-                          //     Theme.of(context).appBarTheme.backgroundColor,
-                          //   ],
-                          //   begin: Alignment.topLeft,
-                          //   end: Alignment.bottomRight,
-                          // ),
+                          gradient:const LinearGradient(
+                            colors: [
+                              Color.fromARGB(255, 0, 64, 241),
+                              Color.fromARGB(255, 0, 15, 153),
+                              // Theme.of(context).appBarTheme.backgroundColor,
+                            ],
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                          ),
                         ),
                       ),
                     ),
@@ -87,7 +92,7 @@ class _TopRowState extends State<TopRow> {
                     ),
                     side: BorderSide(
                       width: 2,
-                      color: Color.fromARGB(163, 255, 255, 255),
+                      // color: Color.fromARGB(163, 255, 255, 255),
                     ),
                   ),
                   bottom: const TabBar(
@@ -185,7 +190,7 @@ class _TopRowState extends State<TopRow> {
           ),
         ),
         bottomNavigationBar: Container(
-          decoration: BoxDecoration(color: Colors.white),
+          decoration: const BoxDecoration(color: Colors.white),
           child: ClipRRect(
             child: BackdropFilter(
               filter: ImageFilter.blur(sigmaX: 30, sigmaY: 30),
@@ -195,13 +200,13 @@ class _TopRowState extends State<TopRow> {
                 height: 50,
                 decoration: BoxDecoration(
                   border: Border.all(
-                    color: Color.fromARGB(255, 255, 255, 255),
+                    color:const Color.fromARGB(255, 255, 255, 255),
                   ),
-                  color: Color.fromARGB(255, 185, 185, 185).withOpacity(0.25),
+                  color:const Color.fromARGB(255, 185, 185, 185).withOpacity(0.25),
                   boxShadow: [
                     BoxShadow(
                         color:
-                            Color.fromARGB(255, 110, 109, 109).withOpacity(0.2),
+                           const Color.fromARGB(255, 110, 109, 109).withOpacity(0.2),
                         blurRadius: 30,
                         offset: const Offset(0, 10))
                   ],

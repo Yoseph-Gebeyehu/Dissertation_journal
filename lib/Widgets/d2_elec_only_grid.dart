@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gallery/Widgets/each_department_widget.dart';
 
 import 'package:gallery/Widgets/picture_items.dart';
 // ignore: depend_on_referenced_packages
@@ -17,19 +18,6 @@ class ElecGrid extends StatelessWidget {
     final picFile = Provider.of<PicturesFile>(context);
     final electPic = isFav ? picFile.isFavOnly : picFile.elecOnly;
 
-    return GridView.builder(
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        childAspectRatio: 1 / 1,
-        mainAxisExtent: 350,
-        crossAxisCount: 1,
-        crossAxisSpacing: 0,
-        mainAxisSpacing: 10,
-      ),
-      itemBuilder: (context, i) => ChangeNotifierProvider.value(
-        value: electPic[i],
-        child:const  PicturesItem(),
-      ),
-      itemCount: electPic.length,
-    );
+    return EachDepartmentWidget(depPic: electPic);
   }
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gallery/Screens/top_row.dart';
-import 'package:gallery/Widgets/soft_only_grid.dart';
+import 'package:gallery/Widgets/d3_soft_only_grid.dart';
 // import 'package:gallery/Widgets/top_row.dart';
 
 import '../Widgets/drawer.dart';

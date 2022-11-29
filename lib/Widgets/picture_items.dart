@@ -1,7 +1,4 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
-import 'package:gallery/Widgets/elec_only_grid.dart';
 import 'package:provider/provider.dart';
 
 import 'package:gallery/Provider/pictures.dart';

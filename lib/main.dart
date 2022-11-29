@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:gallery/Widgets/chem_only_grid.dart';
-import 'package:gallery/Widgets/elec_only_grid.dart';
-import 'package:gallery/Widgets/soft_only_grid.dart';
+import 'package:gallery/Widgets/d1_chem_only_grid.dart';
+import 'package:gallery/Widgets/d2_elec_only_grid.dart';
+import 'package:gallery/Widgets/d3_soft_only_grid.dart';
 import 'package:provider/provider.dart';
 
 import 'package:gallery/Provider/favorite_data.dart';

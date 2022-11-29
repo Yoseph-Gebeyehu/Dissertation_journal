@@ -8,6 +8,30 @@ class GalleryDrawer extends StatelessWidget {
   // const GalleryDrawer({required Key key}) : super(key: key);
   static const routeName = '/gallery-drawer';
 
+  ListTile listTile(
+    BuildContext context,
+    IconData icons,
+    String text,
+    Function()? ontap,
+  ) {
+    return ListTile(
+      leading: Icon(
+        icons,
+        color: Theme.of(context).iconTheme.color,
+      ),
+      title: Text(
+        text,
+        style: TextStyle(
+          fontFamily: 'QuickSand',
+          fontSize: 18,
+          color: Theme.of(context).textTheme.bodyText1?.color!,
+        ),
+      ),
+      onTap: ontap,
+      // contentPadding: const EdgeInsets.all(0),
+    );
+  }
+
   const GalleryDrawer({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -16,96 +40,47 @@ class GalleryDrawer extends StatelessWidget {
         children: [
           SizedBox(
             width: double.infinity,
-            child: Image.asset(
-              'Assets/Images/download.jpg',
-              fit: BoxFit.cover,
-              width: double.infinity,
-            ),
-          ),
-          ListTile(
-            leading: Icon(
-              Icons.photo_album,
-              color: Theme.of(context).iconTheme.color,
-            ),
-            title: Text(
-              'All',
-              style: TextStyle(
-                fontFamily: 'QuickSand',
-                fontSize: 18,
-                color: Theme.of(context).textTheme.bodyText1?.color!,
+            height: MediaQuery.of(context).size.height * 0.50,
+            child: ClipRRect(
+              borderRadius:const BorderRadius.only(
+                bottomLeft: Radius.circular(22),
+                bottomRight: Radius.circular(22),
+              ),
+              child: Image.asset(
+                'Assets/Images/download.jpg',
+                fit: BoxFit.cover,
+                width: double.infinity,
               ),
             ),
-            onTap: () =>
-                {Navigator.of(context).pushReplacementNamed(TopRow.routeName)},
           ),
-          ListTile(
-            leading: Icon(
-              Icons.person,
-              color: Theme.of(context).iconTheme.color,
-            ),
-            title: Text(
-              'President Speech',
-              style: TextStyle(
-                fontFamily: 'QuickSand',
-                fontSize: 18,
-                color: Theme.of(context).textTheme.bodyText1?.color!,
-              ),
-            ),
-            onTap: () => {
-              Navigator.of(context)
-                  .pushReplacementNamed(PresidentSpeechScreen.routeName)
-            },
+          listTile(
+            context,
+            Icons.photo_album,
+            'All',
+            () => Navigator.of(context).pushReplacementNamed(TopRow.routeName),
           ),
-          ListTile(
-            leading: Icon(
-              Icons.color_lens,
-              color: Theme.of(context).iconTheme.color,
-            ),
-            title: Text(
-              'Color Day',
-              style: TextStyle(
-                fontFamily: 'QuickSand',
-                fontSize: 18,
-                color: Theme.of(context).textTheme.bodyText1?.color!,
-              ),
-            ),
-            onTap: () => {
+          listTile(
+            context,
+            Icons.color_lens,
+            'Color Day',
+            () => {
               Navigator.of(context)
                   .pushReplacementNamed(DaysPicturesScreen.routeName)
             },
           ),
+          listTile(
+            context,
+            Icons.person,
+            'President Speech',
+            () => Navigator.of(context)
+                .pushReplacementNamed(PresidentSpeechScreen.routeName),
+          ),
           const SizedBox(
-            height: 30,
+            height: 20,
           ),
           const Divider(),
-          ListTile(
-            leading: Icon(
-              Icons.info_outline,
-              color: Theme.of(context).iconTheme.color,
-            ),
-            title: Text(
-              'About ',
-              style: TextStyle(
-                fontFamily: 'QuickSand',
-                fontSize: 18,
-                color: Theme.of(context).textTheme.bodyText1?.color!,
-              ),
-            ),
-          ),
-          ListTile(
-            leading: Icon(
-              Icons.share,
-              color: Theme.of(context).iconTheme.color,
-            ),
-            title: Text(
-              'Share',
-              style: TextStyle(
-                fontFamily: 'QuickSand',
-                fontSize: 18,
-                color: Theme.of(context).textTheme.bodyText1?.color!,
-              ),
-            ),
-          ),
+          listTile(context, Icons.info_outline, 'About', () => null),
+          listTile(context, Icons.share, 'Share', () => null),
         ],
       ),
     );
