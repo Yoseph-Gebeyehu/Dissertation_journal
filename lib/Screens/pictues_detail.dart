@@ -19,11 +19,12 @@ class PicturesDetail extends StatelessWidget {
       appBar: AppBar(
         title: Text(picFile.name),
         titleTextStyle: const TextStyle(
-          fontWeight: FontWeight.w100,
+          fontWeight: FontWeight.w400,
           fontSize: 20,
+          fontFamily: 'QuickSand'
         ),
         centerTitle: true,
-        backgroundColor:const Color.fromARGB(255, 0, 15, 153),
+        backgroundColor:Theme.of(context).appBarTheme.backgroundColor,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {

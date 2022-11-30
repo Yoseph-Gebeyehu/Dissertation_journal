@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:gallery/Widgets/bottom_nav_bar.dart';
 import 'package:provider/provider.dart';
 
 import 'package:gallery/Screens/home_chem.dart';
@@ -25,7 +26,6 @@ class TopRow extends StatefulWidget {
 }
 
 class _TopRowState extends State<TopRow> {
-
   int currentIndex = 0;
   var isFav = false;
 
@@ -40,7 +40,6 @@ class _TopRowState extends State<TopRow> {
     FavoriteScreen(),
     TopRow(),
   ];
-
 
   @override
   Widget build(BuildContext context) {
@@ -72,15 +71,15 @@ class _TopRowState extends State<TopRow> {
                             bottomRight: Radius.circular(20),
                           ),
                           color: Theme.of(context).appBarTheme.backgroundColor,
-                          gradient:const LinearGradient(
-                            colors: [
-                              Color.fromARGB(255, 0, 64, 241),
-                              Color.fromARGB(255, 0, 15, 153),
-                              // Theme.of(context).appBarTheme.backgroundColor,
-                            ],
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                          ),
+                          // gradient:  LinearGradient(
+                          //   colors: [
+                          //     // Color.fromARGB(255, 0, 64, 241),
+                          //     // Color.fromARGB(255, 0, 15, 153),
+                          //     // Theme.of(context).appBarTheme.backgroundColor,
+                          //   ],
+                          //   begin: Alignment.topLeft,
+                          //   end: Alignment.bottomRight,
+                          // ),
                         ),
                       ),
                     ),
@@ -92,7 +91,7 @@ class _TopRowState extends State<TopRow> {
                     ),
                     side: BorderSide(
                       width: 2,
-                      // color: Color.fromARGB(163, 255, 255, 255),
+                      color: Color.fromARGB(163, 255, 255, 255),
                     ),
                   ),
                   bottom: const TabBar(
@@ -189,83 +188,7 @@ class _TopRowState extends State<TopRow> {
             ],
           ),
         ),
-        bottomNavigationBar: Container(
-          decoration: const BoxDecoration(color: Colors.white),
-          child: ClipRRect(
-            child: BackdropFilter(
-              filter: ImageFilter.blur(sigmaX: 30, sigmaY: 30),
-              child: Container(
-                margin:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                height: 50,
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color:const Color.fromARGB(255, 255, 255, 255),
-                  ),
-                  color:const Color.fromARGB(255, 185, 185, 185).withOpacity(0.25),
-                  boxShadow: [
-                    BoxShadow(
-                        color:
-                           const Color.fromARGB(255, 110, 109, 109).withOpacity(0.2),
-                        blurRadius: 30,
-                        offset: const Offset(0, 10))
-                  ],
-                  borderRadius: BorderRadius.circular(50),
-                ),
-                child: ListView.builder(
-                  itemCount: icon.length,
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) => InkWell(
-                    onTap: () {
-                      setState(
-                        () {
-                          currentIndex = index;
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return pages[currentIndex];
-                              },
-                            ),
-                          );
-                        },
-                      );
-                    },
-                    child: Stack(
-                      children: [
-                        Container(
-                          width: 82,
-                          child: Center(
-                            child: AnimatedContainer(
-                              duration: Duration(seconds: 1),
-                              curve: Curves.fastLinearToSlowEaseIn,
-                              height: index == currentIndex ? 40 : 0,
-                              width: index == currentIndex ? 70 : 0,
-                              decoration: BoxDecoration(
-                                  color: index == currentIndex
-                                      ? Color.fromARGB(255, 3, 212, 202)
-                                          .withOpacity(.2)
-                                      : Colors.transparent,
-                                  borderRadius: BorderRadius.circular(50)),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          width: 82,
-                          alignment: Alignment.center,
-                          child: Icon(icon[index],
-                              size: 30,
-                              color: index == currentIndex
-                                  ? Color.fromARGB(255, 1, 96, 109)
-                                  : Color.fromARGB(255, 179, 177, 177)),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
-        ),
+        bottomNavigationBar: BottomNavBar1(currentIndex: currentIndex),
       ),
     );
   }

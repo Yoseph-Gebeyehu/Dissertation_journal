@@ -4,11 +4,12 @@ import 'package:shared_preferences/shared_preferences.dart';
 ThemeData lightTheme = ThemeData(
   brightness: Brightness.light,
   scaffoldBackgroundColor: Colors.white,
+  primaryColor: const Color.fromARGB(255, 0, 15, 153),
   fontFamily: 'QuickSand',
   appBarTheme: const AppBarTheme(
     backgroundColor: Color.fromARGB(255, 0, 15, 153),
     iconTheme: IconThemeData(
-      color:Colors.white,
+      color: Colors.white,
     ),
   ),
   textTheme: const TextTheme(
@@ -22,7 +23,7 @@ ThemeData lightTheme = ThemeData(
   iconTheme: const IconThemeData(
     color: Color.fromARGB(255, 0, 15, 153),
   ),
-  accentColor: Colors.purple,
+  accentColor: Colors.white,
 );
 
 ThemeData darkTheme = ThemeData(

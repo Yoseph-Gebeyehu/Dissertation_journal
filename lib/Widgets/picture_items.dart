@@ -18,7 +18,7 @@ class PicturesItem extends StatelessWidget {
           width: MediaQuery.of(context).size.width * 0.90,
           child: Container(
             margin: const EdgeInsets.all(0),
-          width: MediaQuery.of(context).size.width * 0.90,
+            width: MediaQuery.of(context).size.width * 0.90,
             child: Stack(
               alignment: Alignment.topCenter,
               children: <Widget>[
@@ -48,10 +48,10 @@ class PicturesItem extends StatelessWidget {
                         ),
                         Text(
                           pic.department,
-                          style: const TextStyle(
-                            color: Colors.grey,
-                            fontSize: 20
-                          ),
+                          style: TextStyle(
+                              color:
+                                  Theme.of(context).textTheme.bodyText1?.color!,
+                              fontSize: 20),
                         ),
                       ],
                     ),
@@ -59,7 +59,7 @@ class PicturesItem extends StatelessWidget {
                 ),
                 Container(
                   decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: Theme.of(context).scaffoldBackgroundColor,
                       borderRadius: BorderRadius.circular(20.0),
                       boxShadow: const [
                         BoxShadow(
@@ -72,8 +72,9 @@ class PicturesItem extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20.0),
                     child: GestureDetector(
                       onTap: () {
-                        Navigator.of(context)
-                            .pushNamed(PicturesDetail.routeName,arguments: pic.id);
+                        Navigator.of(context).pushNamed(
+                            PicturesDetail.routeName,
+                            arguments: pic.id);
                       },
                       child: Image(
                         height: 250.0,

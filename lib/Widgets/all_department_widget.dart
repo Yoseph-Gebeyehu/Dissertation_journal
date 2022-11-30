@@ -72,7 +72,7 @@ class _AllDepartmentWidgetState extends State<AllDepartmentWidget> {
                             height: 120.0,
                             width: 200.0,
                             decoration: BoxDecoration(
-                              color: Colors.white,
+                              color: Theme.of(context).scaffoldBackgroundColor,
                               borderRadius: BorderRadius.circular(20.0),
                             ),
                             child: Row(
@@ -104,8 +104,9 @@ class _AllDepartmentWidgetState extends State<AllDepartmentWidget> {
                                         style: TextStyle(
                                           fontSize: 16.0,
                                           color: Theme.of(context)
-                                              .appBarTheme
-                                              .backgroundColor,
+                                              .textTheme
+                                              .bodyText1!
+                                              .color,
                                           fontWeight: FontWeight.w600,
                                           letterSpacing: 1.2,
                                         ),
@@ -126,7 +127,7 @@ class _AllDepartmentWidgetState extends State<AllDepartmentWidget> {
                         ),
                         Container(
                           decoration: BoxDecoration(
-                              color: Colors.white,
+                              color: Colors.black,
                               borderRadius: BorderRadius.circular(20.0),
                               boxShadow: const [
                                 BoxShadow(
